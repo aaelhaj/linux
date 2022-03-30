@@ -2750,7 +2750,7 @@ static int aspeed_g5_sig_expr_set(struct aspeed_pinmux_data *ctx,
 		 * reset.
 		 */
 		if (desc->ip == ASPEED_IP_SCU && desc->reg == HW_STRAP1 &&
-		    !(desc->mask & (BIT(21) | BIT(22))))
+		    !(desc->mask & (BIT(21) | BIT(22))) && !(desc->mask & (BIT(12) | BIT(13))))
 			continue;
 
 		if (desc->ip == ASPEED_IP_SCU && desc->reg == HW_STRAP2)
